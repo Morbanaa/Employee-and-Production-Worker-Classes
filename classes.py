@@ -16,6 +16,9 @@ class Production_Worker(Employee):
     def get_shift_num(self):
         return self.shift_num
 
+    def get_name(self):
+        return self.name
+
     # Setters
     def set_name(self,name):
         self.name = name
