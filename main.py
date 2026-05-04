@@ -1,4 +1,6 @@
 from classes import Production_Worker
+import platform
+import os
 
 def main():
     workers = []
@@ -9,11 +11,13 @@ def main():
         while True:
             name = input(f"Enter name #{counter}: ").upper()
             if name != "" and name != " ":
+                clear_screen()
                 break
 
         while True:
             try:
                 number = int(input(f"Enter number #{counter}: "))
+                clear_screen()
                 break
             except ValueError:
                 print("Must be a valid none decimal number!")
@@ -21,6 +25,7 @@ def main():
         while True:
             try:
                 shift_number = int(input(f"Enter shift number #{counter}: "))
+                clear_screen()
                 break
             except ValueError:
                 print("Must be a valid none decimal number!")
@@ -28,6 +33,7 @@ def main():
         while True:
            try:
                 pay_rate = float(input(f"Enter pay_rate #{counter}: "))
+                clear_screen()
                 break
            except ValueError:
                 print("Must be a valid decimal number!")
@@ -38,16 +44,27 @@ def main():
         # Asks user if they want to input more data
         choice = input("Would you like to enter another input?(Y/N) ").upper()
         if choice == "Y" or choice == "YES":
+            clear_screen()
             continue
         else:
+            clear_screen()
             break
     display(workers)
 
+
+# Accepts list of worker objects and iterates over them printing them calling the display method
 def display(workers):
     print("Name ---------- Number ---------- Shift Number ---------- Pay Rate")
     for worker in workers:
         worker.display()
 
+
+# Resets terminal for next step
+def clear_screen():
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 if __name__ == "__main__":
     main()
