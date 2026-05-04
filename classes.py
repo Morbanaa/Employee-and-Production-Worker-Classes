@@ -11,4 +11,4 @@ class Production_Worker(Employee):
         self.pay_rate = pay_rate
 
     def display(self):
-        print(f"{self.name:>20}{self.number:>20}{self.shift_num:>20}{self.pay_rate}")
+        print(f"{self.name:<20}{self.number:<20}{self.shift_num:<20}${self.pay_rate:.2f}")
