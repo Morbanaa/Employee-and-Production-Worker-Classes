@@ -63,16 +63,15 @@ def main():
 def collect_data(workers):
     counter = 0
     while True:
-        counter += 1
         while True:
-            name = input(f"Enter employee name #{counter}: ").upper()
+            name = input(f"Enter employee name: ").upper()
             if name != "" and name != " ":
                 clear_screen()
                 break
 
         while True:
             try:
-                number = int(input(f"Enter employee number #{counter}: "))
+                number = int(input(f"Enter employee number: "))
                 clear_screen()
                 break
             except ValueError:
@@ -80,7 +79,7 @@ def collect_data(workers):
 
         while True:
             try:
-                shift_number = int(input(f"Enter employee shift number #{counter}: "))
+                shift_number = int(input(f"Enter employee shift number: "))
                 clear_screen()
                 break
             except ValueError:
@@ -88,7 +87,7 @@ def collect_data(workers):
 
         while True:
             try:
-                pay_rate = float(input(f"Enter employee pay_rate #{counter}: "))
+                pay_rate = float(input(f"Enter employee pay_rate: "))
                 clear_screen()
                 break
             except ValueError:
