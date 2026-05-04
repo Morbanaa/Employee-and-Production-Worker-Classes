@@ -19,28 +19,34 @@ def main():
                 print("Must be a valid number!")
 
         while True:
-            shift_number = input(f"Enter shift number #{counter}: ")
             try:
-                shift_number = int(shift_number)
+                shift_number = int(input(f"Enter shift number #{counter}: "))
+                break
             except ValueError:
                 print("Must be a valid number!")
-            if shift_number:
-                break
 
         while True:
-            pay_rate = input(f"Enter payrate #{counter}: ")
-            try:
-                pay_rate = float(pay_rate)
-            except ValueError:
-                print("Must be a valid number!")
-            if pay_rate:
+           try:
+                pay_rate = int(input(f"Enter pay_rate #{counter}: "))
                 break
+           except ValueError:
+                print("Must be a valid number!")
+        
+        # Creates worker object and adds to list workers
+        workers.append(Production_Worker(name,number,shift_number,pay_rate))
 
+        # Asks user if they want to input more data
         choice = input("Would you like to enter another input?(Y/N) ").upper()
         if choice == "Y" or choice == "YES":
             continue
         else:
             break
+    display(workers)
+
+def display(workers):
+    print("Name ---------- Number ---------- Shift Number ---------- Pay Rate")
+    for worker in workers:
+        worker.display()
 
 
 if __name__ == "__main__":
