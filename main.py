@@ -14,15 +14,18 @@ def main():
                 print("Would you like to:")
                 print("(A) Change any values:")
                 print("(B) Clear Data:")
-                print("(C) Exit Program:")
+                print("(C) Print Data:")
+                print("(D) Exit Program:")
                 choice = input("Choose: ").upper()
 
                 match choice:
                     case "A":
-                        pass
+                        change_values(workers)
                     case "B":
-                        pass
+                        clear_data(workers)
                     case "C":
+                        display(workers)
+                    case "D":
                         clear_screen()
                         break
                     case _:
@@ -100,6 +103,13 @@ def collect_data(workers):
     display(workers)
 
 
+# Change values in list of objects
+def change_values(workers):
+    pass
+
+# Clears list of data
+def clear_data(workers):
+    pass
 
 # Accepts list of worker objects and iterates over them printing them calling the display method
 def display(workers):
