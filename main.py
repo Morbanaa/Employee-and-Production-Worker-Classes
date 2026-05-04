@@ -1,3 +1,8 @@
+# Teddy Rodd
+# Morbanaa Studios
+# Lab 11
+# Employee and Production Worker Classes
+
 import dis
 from classes import Production_Worker
 import platform
