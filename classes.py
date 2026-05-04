@@ -1,3 +1,8 @@
+# Teddy Rodd
+# Morbanaa Studios
+# Lab 11
+# Employee and Production Worker Classes
+
 class Employee():
     # Constructor
     def __init__(self,name,number):
