@@ -22,7 +22,7 @@ def main():
                     case "A":
                         change_values(workers)
                     case "B":
-                        clear_data(workers)
+                        workers = clear_data(workers)
                     case "C":
                         display(workers)
                     case "D":
@@ -109,7 +109,8 @@ def change_values(workers):
 
 # Clears list of data
 def clear_data(workers):
-    pass
+    workers.clear()
+    return workers
 
 # Accepts list of worker objects and iterates over them printing them calling the display method
 def display(workers):
