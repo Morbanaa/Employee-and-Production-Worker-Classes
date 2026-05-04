@@ -1,3 +1,4 @@
+import dis
 from classes import Production_Worker
 import platform
 import os
@@ -20,7 +21,8 @@ def main():
 
                 match choice:
                     case "A":
-                        change_values(workers)
+                        clear_screen()
+                        workers = change_values(workers)
                     case "B":
                         clear_screen()
                         workers = clear_data(workers)
@@ -47,7 +49,7 @@ def main():
                     case "A":
                         has_data = True
                         clear_screen()
-                        collect_data(workers)
+                        workers = collect_data(workers)
                     case "B":
                         clear_screen()
                         break
@@ -102,13 +104,98 @@ def collect_data(workers):
             continue
         else:
             clear_screen()
-            break
-    display(workers)
+            return workers
+
 
 
 # Change values in list of objects
 def change_values(workers):
-    pass
+    while True:
+        # Prints out table
+        display(workers)
+
+        # Deterims if person is in list
+        target_name = input("Enter the name of whom you want to edit or Q to quit: ").upper()
+        did_find = False
+        for worker in workers:
+            if worker.get_name() == target_name:
+                did_find = True
+                break
+        if target_name == "Q" or target_name == "QUIT":
+            clear_screen()
+            break
+        elif did_find == False:
+            print("Name not found!\n")
+            continue
+        else:
+            # Determins which value the user would like to update in the object
+            while True:
+                print("Would you like to:")
+                print("(A) Change the employee name:")
+                print("(B) Change the employee number: ")
+                print("(C) Change the employee shift number:")
+                print("(D) Change the employee pay rate:")
+                print("(E) Return to menu: ")
+                choice = input("Choose: ").upper()
+
+                match choice:
+                    case "A":
+                        while True:
+                            name = input(f"Enter new employee name: ").upper()
+                            if name != "" and name != " ":
+                                clear_screen()
+                                for worker in workers:
+                                    if worker.get_name() == target_name:
+                                        worker.set_name(name)
+                                        break
+                                break
+                    case "B":
+                        while True:
+                            try:
+                                number = int(input(f"Enter new employee number: "))
+                                clear_screen()
+                                for worker in workers:
+                                    if worker.get_name() == target_name:
+                                        worker.set_number(number)
+                                        break
+                                break
+                            except ValueError:
+                                print("Must be a valid none decimal number!")
+                    case "C":
+                        while True:
+                            try:
+                                shift_number = int(input(f"Enter new employee shift number: "))
+                                clear_screen()
+                                for worker in workers:
+                                    if worker.get_name() == target_name:
+                                       worker.set_shift_number(shift_number)
+                                       break
+                                break
+                            except ValueError:
+                                print("Must be a valid none decimal number!")
+
+                    case "D":
+                        while True:
+                            try:
+                                pay_rate = float(input(f"Enter new employee pay_rate: "))
+                                clear_screen()
+                                for worker in workers:
+                                    if worker.get_name() == target_name:
+                                        worker.set_pay_rate(pay_rate)
+                                        break
+                                break
+                            except ValueError:
+                                print("Must be a valid decimal number!")
+                    case "E":
+                        clear_screen()
+                        break
+                    case _:
+                        continue
+                break
+            break
+        break
+    return workers
+
 
 # Clears list of data
 def clear_data(workers):
