@@ -125,12 +125,12 @@ def change_values(workers):
             clear_screen()
             break
         elif did_find == False:
-            print("Name not found!\n")
+            print("\nName not found!\n")
             continue
         else:
             # Determins which value the user would like to update in the object
             while True:
-                print("Would you like to:")
+                print("\nWould you like to:")
                 print("(A) Change the employee name:")
                 print("(B) Change the employee number: ")
                 print("(C) Change the employee shift number:")
@@ -141,7 +141,7 @@ def change_values(workers):
                 match choice:
                     case "A":
                         while True:
-                            name = input(f"Enter new employee name: ").upper()
+                            name = input(f"\nEnter new employee name: ").upper()
                             if name != "" and name != " ":
                                 clear_screen()
                                 for worker in workers:
@@ -152,7 +152,7 @@ def change_values(workers):
                     case "B":
                         while True:
                             try:
-                                number = int(input(f"Enter new employee number: "))
+                                number = int(input(f"\nEnter new employee number: "))
                                 clear_screen()
                                 for worker in workers:
                                     if worker.get_name() == target_name:
@@ -164,7 +164,7 @@ def change_values(workers):
                     case "C":
                         while True:
                             try:
-                                shift_number = int(input(f"Enter new employee shift number: "))
+                                shift_number = int(input(f"\nEnter new employee shift number: "))
                                 clear_screen()
                                 for worker in workers:
                                     if worker.get_name() == target_name:
@@ -177,7 +177,7 @@ def change_values(workers):
                     case "D":
                         while True:
                             try:
-                                pay_rate = float(input(f"Enter new employee pay_rate: "))
+                                pay_rate = float(input(f"\nEnter new employee pay_rate: "))
                                 clear_screen()
                                 for worker in workers:
                                     if worker.get_name() == target_name:
