@@ -22,8 +22,11 @@ def main():
                     case "A":
                         change_values(workers)
                     case "B":
+                        clear_screen()
                         workers = clear_data(workers)
+                        has_data = False
                     case "C":
+                        clear_screen()
                         display(workers)
                     case "D":
                         clear_screen()
@@ -129,3 +132,5 @@ def clear_screen():
 
 if __name__ == "__main__":
     main()
+    # Last message
+    print("Have a great day!")
