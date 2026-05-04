@@ -193,7 +193,6 @@ def change_values(workers):
                         continue
                 break
             break
-        break
     return workers
 
 
