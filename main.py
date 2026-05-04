@@ -12,18 +12,28 @@ def main():
                 break
 
         while True:
-            number = input(f"Enter number #{counter}: ").upper()
-            if number != "" and number != " ":
+            try:
+                number = int(input(f"Enter number #{counter}: "))
+                break
+            except ValueError:
+                print("Must be a valid number!")
+
+        while True:
+            shift_number = input(f"Enter shift number #{counter}: ")
+            try:
+                shift_number = int(shift_number)
+            except ValueError:
+                print("Must be a valid number!")
+            if shift_number:
                 break
 
         while True:
-            shift_number = input(f"Enter shift number #{counter}: ").upper()
-            if shift_number != "" and shift_number != " ":
-                break
-
-        while True:
-            pay_rate = input(f"Enter payrate #{counter}: ").upper()
-            if pay_rate != "" and pay_rate != " ":
+            pay_rate = input(f"Enter payrate #{counter}: ")
+            try:
+                pay_rate = float(pay_rate)
+            except ValueError:
+                print("Must be a valid number!")
+            if pay_rate:
                 break
 
         choice = input("Would you like to enter another input?(Y/N) ").upper()
