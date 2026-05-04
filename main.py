@@ -9,12 +9,28 @@ def main():
 
         # Decide if outside loop continues
         while True:
+            #Only runs this if there is no data
             if has_data == True:
                 print("Would you like to:")
                 print("(A) Change any values:")
                 print("(B) Clear Data:")
                 print("(C) Exit Program:")
                 choice = input("Choose: ").upper()
+
+                match choice:
+                    case "A":
+                        pass
+                    case "B":
+                        pass
+                    case "C":
+                        clear_screen()
+                        break
+                    case _:
+                        clear_screen()
+                        print("Not a valid input!")
+                        continue
+
+            # runs if data is already there
             else:
                 print("Would you like to:")
                 print("(A) Add data:")
@@ -23,6 +39,7 @@ def main():
 
                 match choice:
                     case "A":
+                        has_data = True
                         clear_screen()
                         collect_data(workers)
                     case "B":
