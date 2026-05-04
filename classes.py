@@ -9,3 +9,6 @@ class Production_Worker(Employee):
         super().__init__(name,number)
         self.shift_num = shift_num
         self.pay_rate = pay_rate
+
+    def display(self):
+        print(f"{self.name:>20}{self.number:>20}{self.shift_num:>20}{self.pay_rate}")
