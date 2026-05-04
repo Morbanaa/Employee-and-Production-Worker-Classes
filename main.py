@@ -16,21 +16,21 @@ def main():
                 number = int(input(f"Enter number #{counter}: "))
                 break
             except ValueError:
-                print("Must be a valid number!")
+                print("Must be a valid none decimal number!")
 
         while True:
             try:
                 shift_number = int(input(f"Enter shift number #{counter}: "))
                 break
             except ValueError:
-                print("Must be a valid number!")
+                print("Must be a valid none decimal number!")
 
         while True:
            try:
-                pay_rate = int(input(f"Enter pay_rate #{counter}: "))
+                pay_rate = float(input(f"Enter pay_rate #{counter}: "))
                 break
            except ValueError:
-                print("Must be a valid number!")
+                print("Must be a valid decimal number!")
         
         # Creates worker object and adds to list workers
         workers.append(Production_Worker(name,number,shift_number,pay_rate))
