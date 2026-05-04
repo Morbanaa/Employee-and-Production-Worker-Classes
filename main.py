@@ -80,8 +80,12 @@ def collect_data(workers):
         while True:
             try:
                 shift_number = int(input(f"Enter employee shift number (1 = Day Shift || 2 = Night Shift): "))
-                clear_screen()
-                break
+                if shift_number == 1 or shift_number == 2:
+                    clear_screen()
+                    break
+                else:
+                    print("You may only enter 1 or 2!")
+                    continue
             except ValueError:
                 print("Must be a valid none decimal number!")
 
