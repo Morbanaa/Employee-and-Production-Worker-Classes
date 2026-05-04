@@ -9,14 +9,14 @@ def main():
     while True:
         counter += 1
         while True:
-            name = input(f"Enter name #{counter}: ").upper()
+            name = input(f"Enter employee name #{counter}: ").upper()
             if name != "" and name != " ":
                 clear_screen()
                 break
 
         while True:
             try:
-                number = int(input(f"Enter number #{counter}: "))
+                number = int(input(f"Enter employee number #{counter}: "))
                 clear_screen()
                 break
             except ValueError:
@@ -24,7 +24,7 @@ def main():
 
         while True:
             try:
-                shift_number = int(input(f"Enter shift number #{counter}: "))
+                shift_number = int(input(f"Enter employee shift number #{counter}: "))
                 clear_screen()
                 break
             except ValueError:
@@ -32,7 +32,7 @@ def main():
 
         while True:
            try:
-                pay_rate = float(input(f"Enter pay_rate #{counter}: "))
+                pay_rate = float(input(f"Enter employee pay_rate #{counter}: "))
                 clear_screen()
                 break
            except ValueError:
