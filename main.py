@@ -79,7 +79,7 @@ def collect_data(workers):
 
         while True:
             try:
-                shift_number = int(input(f"Enter employee shift number: "))
+                shift_number = int(input(f"Enter employee shift number (1 = Day Shift || 2 = Night Shift): "))
                 clear_screen()
                 break
             except ValueError:
@@ -163,7 +163,7 @@ def change_values(workers):
                     case "C":
                         while True:
                             try:
-                                shift_number = int(input(f"\nEnter new employee shift number: "))
+                                shift_number = int(input(f"\nEnter new employee shift number (1 = Day Shift || 2 = Night Shift): "))
                                 clear_screen()
                                 for worker in workers:
                                     if worker.get_name() == target_name:
@@ -202,7 +202,7 @@ def clear_data(workers):
 
 # Accepts list of worker objects and iterates over them printing them calling the display method
 def display(workers):
-    print("Name ---------- Number ---------- Shift Number ---------- Pay Rate")
+    print("Name ---------- Number ---------- Shift ---------- Pay Rate")
     for worker in workers:
         worker.display()
     print("__________________________________________________________________\n")
