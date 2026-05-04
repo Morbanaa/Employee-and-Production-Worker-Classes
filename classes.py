@@ -34,4 +34,9 @@ class Production_Worker(Employee):
 
     # Display Method
     def display(self):
-        print(f"{self.name:<20}{self.number:<20}{self.shift_num:<20}${self.pay_rate:.2f}")
+        shift = ""
+        if self.shift_num == 1:
+            shift = "Day Shift"
+        else:
+            shift = "Night Shift"
+        print(f"{self.name:<18}{self.number:<15}{shift:<20}${self.pay_rate:.2f}")
